@@ -1,27 +1,5 @@
 # MyDemo
 
-const connectedRdData = useMemo(() => {
-  return appPeripherals.rdInformation
-    .filter(rd => rd.deviceId !== "-"); // Only RDs that are currently connected
-}, [appPeripherals.rdInformation]);
 
+{"euid":"FCC23D0000318C5E","deviceId":"124290031","modelNumber":1,"waferData":"P8866W6","thermostableCurrent":14000,"lastVtInFactory":7713286,"factoryCalibrationParams":{"gain":4294641.376,"timestamp":"2024-08-09T06:39:00.000Z"},"systemCalibrationParams":{"gain":4294967.294,"timestamp":"+010136-02-16T04:14:00.000Z"},"userCalibrationParams":{"gain":4294967.294,"timestamp":"+010136-02-16T04:14:00.000Z"},"numberUses":0,"maxNumberUses":1,"accumulatedVoltage":7797049,"maxAccumulatedVoltage":10000000,"sensitivityCalibrationType":"system"}
 
-<RdInfoTable
-  status={calibrationFlow.rdStatus}
-  value1Header="RD ID"
-  value1Data={connectedRdData.map(rd => rd.deviceId)}
-  value2Header="Model Number"
-  value2Data={connectedRdData.map(rd => rd.modelNumber.toString())}
-  value3Header="Wafer Data"
-  value3Data={connectedRdData.map(rd => rd.waferData)}
-  value4Header="Number of Uses"
-  value4Data={connectedRdData.map(rd => rd.numberUses.toString())}
-  value5Header="Pre-Read Status"
-  value5Data={connectedRdData.map(() => "Complete")}
-  // Add more fields if needed
-
-
-useEffect(() => {
-  console.log("✅ Connected RDs:", connectedRdData);
-  console.log("✅ All Stored RDs:", appPeripherals.rdInformation);
-}, [connectedRdData, appPeripherals.rdInformation]);
