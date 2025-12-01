@@ -12,6 +12,12 @@ react-native bundle
 
 
 
+npx npx react-native bundle \
+  --entry-file index.ts \
+  --platform ios \
+  --dev false \
+  --bundle-output ios/main.jsbundle \
+  --assets-dest ios
 
 
 
@@ -24,7 +30,7 @@ export type EmailConfig = {
 };
 
 
-/** @namespace CalibrationReportManager */
+/** @namespace  */
 /**
   **************************************************************************************************
   * @file      session-report-manager.ts
