@@ -12,7 +12,7 @@ react-native bundle
 
 
 
-npx npx react-native bundle \
+npx react-native bundle \
   --entry-file index.ts \
   --platform ios \
   --dev false \
